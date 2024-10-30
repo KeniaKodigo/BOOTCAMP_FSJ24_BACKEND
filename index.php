@@ -70,14 +70,32 @@
         $animal2->nombre = "Lencho";
         $animal2->especie = "Perro";
         var_dump($animal);
+
+        class Persona{
+            public $nombre;
+            public $apellido;
+            public $edad;
+            public $telefono;
+        }
+
+        $persona = new Persona();
+        $persona->nombre = "Kenia";
+        $persona->apellido ="Paiz";
+        $persona->edad = 26;
+        $persona->telefono = 5647834;
+
+        $persona2 = new Persona();
+        $persona2->nombre = "Celina";
     ?>
 </body>
 <script>
-    let persona = {
+    let personas = {
         nombre: "Kenia",
         apellido: "Paiz",
         edad: 26,
         telefono: 5647834
     }
+
+    let frutas = ["uvas","peras"];
 </script>
 </html>
