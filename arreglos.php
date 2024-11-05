@@ -50,6 +50,7 @@ $paises_multi = [
 echo json_encode($paises_multi);
 //json_decode = Decodifica (convierte un json a un arreglo de PHP)
 
+
 // echo "<br>";
 // print_r($paises_multi[1]);
 // print_r($paises_multi[1]["departamentos"]);

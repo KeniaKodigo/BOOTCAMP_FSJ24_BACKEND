@@ -20,6 +20,7 @@
 
         <button type="submit">Enviar Datos</button>
     </form>
+
 <!-- 
     Peticiones HTTP
     GET => la informacion en la url
