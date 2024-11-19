@@ -6,6 +6,7 @@ class Bootcamp{
     public $nombre; //tipo de alcance: se va acceder global (dentro de la clase, fuera de la clase, clases hijas)
     protected $coach; //tipo de alcance: dentro de la clase y clases hijas
     private $duracion; //tipo de alcance: solamente hay acceso dentro de la clase
+    //default => privado, que solo se accede dentro de la clase
 
     //metodo especial: constructor
     /**
@@ -84,16 +85,23 @@ class BootcampINCAF extends Bootcamp{
     }
 
     //cambiamos el comportamiento
-    public function temario_bootcamp()
+    //aplicando la sobreescritura
+    //aplicando la simulacion de la sobrecarga de metodos con parametros opcionales
+    public function temario_bootcamp($modulo = null)
     {
-        $temario = ["javascript","react","taller de scrum","taller de git","applaudo"];
-        echo "Temario del INCAF";
-        
+        if($modulo == 1){
+            $temario = ["HTML","CSS","GIT"];
+            echo "Temario del MODULO 1";
+        }else{
+            $temario = ["HTML","CSS","GIT","JAVASCRIPT","react","PHP"];
+            echo "Temario de todos los modulos";
+        }
     }
 }
 echo "<br>";
 $incaf = new BootcampINCAF("incaf-fsj14","karla lopez","Gobierno SV");
 $incaf->setDuracion("6.5 meses");
 echo $incaf->getDuracion();
+$incaf->temario_bootcamp(1);
 echo "<br>";
 print_r($incaf);
