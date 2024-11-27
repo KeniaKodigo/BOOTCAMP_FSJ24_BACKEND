@@ -3,6 +3,9 @@
 interface AcademicManagement {
     public function registerStudent();
     public function assignProfessor();
+}
+
+interface Payments{
     public function registerPayment();
 }
 
@@ -14,8 +17,10 @@ class Course implements AcademicManagement {
     public function assignProfessor() {
         // Código para asignar profesor
     }
+}
 
-    public function registerPayment() {
-        // Curso no debería encargarse de pagos
+class Paypall implements Payments{
+    public function registerPayment(){
+        //code..
     }
 }

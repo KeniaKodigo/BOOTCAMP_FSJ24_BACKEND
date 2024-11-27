@@ -1,10 +1,26 @@
 
 <?php
-
+//contratos
 interface Kodigo{
     public function registrarNotas();
     public function verNotas();
     public function enviarTareas();
+    public function darClase();
+}
+
+interface Notas{
+    public function verNotas();
+}
+
+interface GestionNotas{
+    public function registrarNotas();
+}
+
+interface Tarea{
+    public function enviarTareas();
+}
+
+interface Clase{
     public function darClase();
 }
 
@@ -26,11 +42,19 @@ abstract class Persona{
     public abstract function verPerfil();
 }
 
-class Estudiante implements Kodigo{
-    
+class Estudiante implements Notas, Tarea{
+    public function verNotas()
+    {
+        
+    }
+
+    public function enviarTareas()
+    {
+        
+    }
 }
 
-class Coach extends Persona implements Kodigo{
+class Coach extends Persona implements Notas, GestionNotas, Clase{
 
     public function registrarNotas()
     {
@@ -38,11 +62,6 @@ class Coach extends Persona implements Kodigo{
     }
 
     public function verNotas()
-    {
-        
-    }
-
-    public function enviarTareas()
     {
         
     }
