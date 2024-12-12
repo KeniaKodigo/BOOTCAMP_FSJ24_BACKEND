@@ -14,5 +14,6 @@ class Users{
 
         $result = $query->fetchAll(PDO::FETCH_ASSOC); //arreglo de datos
         return $result;
+
     }
 }

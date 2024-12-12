@@ -8,5 +8,5 @@ require_once "./class/Tasks.php";
 // echo json_encode($users, true);
 
 $task = new Task("Aprender PDO","Utilizar PDO para base de datos", 1);
-$result = $task->save();
-echo $result;
+// $result = $task->save();
+// echo $result;
