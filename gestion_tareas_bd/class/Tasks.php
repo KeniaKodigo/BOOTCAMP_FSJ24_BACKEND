@@ -29,7 +29,10 @@ class Task{
             $result = $query->execute(["$this->title","$this->description","$this->status","$this->date", $this->id_user]);
 
             if($result){
-                echo "Se ha registrado correctamente";
+                //echo "Se ha registrado correctamente";
+                echo "<script>
+                    window.location.href = './index.php';
+                </script>";
             }
 
         }catch(PDOException $e){
@@ -60,11 +63,25 @@ class Task{
             $result = $query->execute();
 
             if($result){
-                echo "Se actualizo el estado";
+                //echo "Se actualizo el estado";
+                echo "<script>
+                    window.location.href = './index.php';
+                </script>";
             }
 
         }catch(PDOException $e){
             echo "Error al actualizar el estado: " . $e->getMessage();
         }
+    }
+
+    //metodo que obtiene las tareas pendientes en base al usuario que ha iniciado sesion
+    public static function get_task_by_user($id_user){
+        //utilizar la session para el usuario
+        $pdo = Conection::connect();
+        //ejercemos la consulta "prepare" "query"
+        $query = $pdo->query("SELECT * FROM task where id_user=$id_user and status = 'Pendiente'");
+        $query->execute();
+        $results = $query->fetchAll(PDO::FETCH_ASSOC); //[]
+        return $results;
     }
 }

@@ -17,3 +17,8 @@ class Users{
 
     }
 }
+
+/**
+ * prepare()
+ * query()
+ */

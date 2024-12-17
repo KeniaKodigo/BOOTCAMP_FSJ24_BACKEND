@@ -14,6 +14,9 @@
         $users = Users::all(); //[arreglo de usuarios] -> iterar el arreglo
         // print_r($users);
         $tasks = Task::getTasks(); //[arreglo de tareas]
+
+        //incluyendo un menu de navegacion
+        include "./assets/nav.php";
     ?>
     <main class="container">
         <h1>Gestion de Tareas</h1>
